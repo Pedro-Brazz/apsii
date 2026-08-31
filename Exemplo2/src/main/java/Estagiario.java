@@ -1,26 +1,28 @@
-public class Estagiario {
-    public class Estagiario extends Funcionario {
-        private double valorBolsaAuxilio;
-        private int cargaHorariaSemanal;
+public class Estagiario extends Funcionario {
 
-        public Estagiario(String nome, String matricula,
-                          double salarioBase, String dataAdmissao,
-                          double valorBolsaAuxilio,
-                          int cargaHorariaSemanal) {
-            super(nome, matricula, salarioBase, dataAdmissao);
-            this.valorBolsaAuxilio = valorBolsaAuxilio;
-            this.cargaHorariaSemanal = cargaHorariaSemanal;
-        }
+    private double valorBolsaAuxilio;
+    private int cargaHorariaSemanal;
 
-        @Override
-        public double calcularSalario() {
-            return valorBolsaAuxilio;
-        }
+    public Estagiario(String nome, String matricula,
+                      double salarioBase, String dataAdmissao,
+                      double valorBolsaAuxilio,
+                      int cargaHorariaSemanal) {
 
-        @Override
-        public double calcularDesconto() {
-            return 0.00;
-        }
+        super(nome, matricula, salarioBase, dataAdmissao);
+
+        this.valorBolsaAuxilio = valorBolsaAuxilio;
+        this.cargaHorariaSemanal = cargaHorariaSemanal;
     }
 
+    @Override
+    public double calcularSalario() {
+
+        return valorBolsaAuxilio;
+    }
+
+    @Override
+    public double calcularDesconto() {
+
+        return 0;
+    }
 }

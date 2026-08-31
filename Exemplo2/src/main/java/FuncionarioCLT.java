@@ -1,32 +1,30 @@
 public class FuncionarioCLT extends Funcionario {
-        private double valeTransporte;
-        private double valeAlimentacao;
 
-        public FuncionarioCLT(String nome, String matricula,
-                              double salarioBase, String dataAdmissao,
-                              double valeTransporte,
-                              double valeAlimentacao) {
-            super(nome, matricula, salarioBase, dataAdmissao);
-            this.valeTransporte = valeTransporte;
-            this.valeAlimentacao = valeAlimentacao;
-        }
+    private double valeTransporte;
+    private double valeAlimentacao;
 
-        public double getValeTransporte() {
-            return valeTransporte;
-        }
+    public FuncionarioCLT(String nome, String matricula,
+                          double salarioBase, String dataAdmissao,
+                          double valeTransporte,
+                          double valeAlimentacao) {
 
-        public double getValeAlimentacao() {
-            return valeAlimentacao;
-        }
+        super(nome, matricula, salarioBase, dataAdmissao);
 
-        @Override
-        public double calcularSalario() {
-            return super.calcularSalario() + valeTransporte + valeAlimentacao;
-        }
+        this.valeTransporte = valeTransporte;
+        this.valeAlimentacao = valeAlimentacao;
+    }
 
-        @Override
-        public double calcularDesconto() {
-            return super.calcularDesconto() + 50.00;
-        }
+    @Override
+    public double calcularSalario() {
+
+        return super.calcularSalario()
+                + valeTransporte
+                + valeAlimentacao;
+    }
+
+    @Override
+    public double calcularDesconto() {
+
+        return super.calcularDesconto() + 50;
     }
 }
